@@ -35,9 +35,9 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-
+  const returnmessage = event.message.text.includes("test")?event.message.text:"sorry, I don't understand"
   // create a echoing text message
-  const echo = { type: 'text', text: event.message.text };
+  const echo = { type: 'text', text: returnmessage };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);

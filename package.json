@@ -9,5 +9,8 @@
   "dependencies": {
     "@line/bot-sdk": "^6.7.1",
     "express": "^4.16.3"
+  },
+  "engines": {
+    "npm": "6.x"
   }
 }

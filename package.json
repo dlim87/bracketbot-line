@@ -1,0 +1,13 @@
+{
+  "name": "bracketbot",
+  "version": "0.0.0",
+  "description": "A line bot to check the status of MPQ brackets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^6.7.1",
+    "express": "^4.16.3"
+  }
+}

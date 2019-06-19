@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-import parseText from './parseMessage'
+import parseText from './parseText.js'
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -44,7 +44,7 @@ function handleEvent(event) {
 
   console.log("====== sending response ======")
   console.log(returnmessage)
-  
+
   const response = { type: 'text', text: returnmessage };
 
   // use reply API

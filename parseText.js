@@ -4,7 +4,7 @@ const validBrackets = ['1.9', '2.9', '3.9', '4.9', '5.9',
 '1.6', '2.6', '3.6', '4.6', '5.6',
 'SCL9','SCL8','SCL7','SCL6']
 
-export default function parseText(text) {
+ const parseText = (text) => {
   const trimmedText = text.trim().split(' ')
   const textCommand = trimmedText[0].toLowerCase()
 
@@ -20,6 +20,8 @@ export default function parseText(text) {
     
     return "please choose a valid bracket"
   }
-  
+
   return false
 }
+
+module.exports = parseText

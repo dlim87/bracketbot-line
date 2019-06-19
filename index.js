@@ -2,7 +2,7 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-
+import parseText from './parseMessage'
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
@@ -35,7 +35,7 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-  const returnmessage = event.message.text.includes("test")?event.message.text:"sorry, I don't understand"
+  const returnmessage = parseMessage(event.message.text)
   // create a echoing text message
   const echo = { type: 'text', text: returnmessage };
 

@@ -58,12 +58,12 @@ function handleEvent(event) {
     }
     else return false
   }
-  // const incomingMessage = parseText(event.message.text)
-  // if(incomingMessage === false) returnmessage = "invalid request"
-  // else if (typeof incomingMessage==="string") returnmessage= incomingMessage
-  // else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
+  const incomingMessage = parseText(event.message.text)
+  if(incomingMessage === false) returnmessage = "invalid request"
+  else if (typeof incomingMessage==="string") returnmessage= incomingMessage
+  else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
   
-  returnmessage = event.message.text.includes("test")?event.message.text:"sorry, I don't understand"
+  // returnmessage = event.message.text.includes("test")?event.message.text:"sorry, I don't understand"
   console.log("====== sending response ======")
   console.log(returnmessage)
 

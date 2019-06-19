@@ -38,15 +38,15 @@ function handleEvent(event) {
   const incomingMessage = parseText(event.message.text)
   let returnmessage
   
-  if(incomingMessage === false) returnmessage = "invalid request"
-  else if (typeof incomingMessage==="string") returnmessage= incomingMessage
-  else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
+  // if(incomingMessage === false) returnmessage = "invalid request"
+  // else if (typeof incomingMessage==="string") returnmessage= incomingMessage
+  // else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
 
+  returnmessage = event.message.text.includes("test")?event.message.text:"sorry, I don't understand"
   console.log("====== sending response ======")
   console.log(returnmessage)
 
   const response = { type: 'text', text: returnmessage };
-
   // use reply API
   return client.replyMessage(event.replyToken, response);
 }

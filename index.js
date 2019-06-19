@@ -35,9 +35,14 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-  const returnmessage = parseText(event.message.text)
-  // create a echoing text message
-  const echo = { type: 'text', text: returnmessage };
+  const incomingMessage = parseText(event.message.text)
+  let returnmessage
+  
+  if(incomingMessage === false) returnmessage = "invalid request"
+  else if (typeof incomingMessage==="string") returnmessage= incomingMessage
+  else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
+
+  const response = { type: 'text', text: returnmessage };
 
   // use reply API
   return client.replyMessage(event.replyToken, echo);

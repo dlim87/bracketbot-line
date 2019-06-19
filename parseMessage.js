@@ -5,9 +5,10 @@ const validBrackets = ['1.9', '2.9', '3.9', '4.9', '5.9',
 'SCL9','SCL8','SCL7','SCL6']
 
 function parseText(text) {
-  const textCommand = text.trim().split(' ')[0].toLowerCase()
+  const trimmedText = text.trim().split(' ')
+  const textCommand = trimmedText[0].toLowerCase()
   if (textCommand==="!check"||textCommand==="!update"){
-    const textBracket = text.trim().split(' ')[1].toUpperCase()
+    const textBracket = trimmedText[1].toUpperCase()
     let textObject = {}
     textObject['type']=textCommand.slice(1)
 

@@ -35,7 +35,7 @@ function handleEvent(event) {
     // ignore non-text-message event
     return Promise.resolve(null);
   }
-  const returnmessage = parseMessage(event.message.text)
+  const returnmessage = parseText(event.message.text)
   // create a echoing text message
   const echo = { type: 'text', text: returnmessage };
 

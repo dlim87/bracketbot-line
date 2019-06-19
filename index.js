@@ -42,10 +42,13 @@ function handleEvent(event) {
   else if (typeof incomingMessage==="string") returnmessage= incomingMessage
   else returnmessage =`${incomingMessage['type']}ing ${incomingMessage['bracket']}`
 
+  console.log("====== sending response ======")
+  console.log(returnmessage)
+  
   const response = { type: 'text', text: returnmessage };
 
   // use reply API
-  return client.replyMessage(event.replyToken, echo);
+  return client.replyMessage(event.replyToken, response);
 }
 
 // listen on port

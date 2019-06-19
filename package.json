@@ -4,11 +4,13 @@
   "description": "A line bot to check the status of MPQ brackets",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node index.js"
   },
   "dependencies": {
     "@line/bot-sdk": "^6.7.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "googleapis": "^39.2.0",
+    "jest": "^24.8.0"
   },
   "engines": {
     "node": "10.16.0"

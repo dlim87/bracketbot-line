@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@line/bot-sdk": "^6.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "googleapis": "^39.2.0",
     "jest": "^24.8.0"
   },
